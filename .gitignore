@@ -1,0 +1,6 @@
+node_modules/
+out/
+dist/
+resources/roms/*.rom
+tests/fixtures/downloaded/
+games/

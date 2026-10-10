@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'" />
+    <title>ZX Spectrum</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <main id="display">
+      <canvas id="screen" width="352" height="288"></canvas>
+      <div id="overlay" hidden></div>
+    </main>
+    <footer id="status">
+      <span id="status-model"></span>
+      <span id="status-tape"></span>
+      <span id="status-message"></span>
+    </footer>
+    <script type="module" src="./main.ts"></script>
+  </body>
+</html>

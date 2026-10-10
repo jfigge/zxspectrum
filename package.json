@@ -1,0 +1,34 @@
+{
+  "name": "zxspectrum",
+  "version": "0.1.0",
+  "description": "ZX Spectrum 48K/128K emulator for Electron",
+  "main": "out/main/index.js",
+  "type": "module",
+  "scripts": {
+    "postinstall": "node scripts/fetch-roms.mjs",
+    "fetch-roms": "node scripts/fetch-roms.mjs",
+    "dev": "electron-vite dev",
+    "build": "electron-vite build",
+    "start": "electron-vite preview",
+    "typecheck": "tsc --noEmit -p tsconfig.json",
+    "test": "vitest run --exclude tests/zex.test.ts",
+    "test:zex": "vitest run tests/zex.test.ts",
+    "dist": "electron-vite build && electron-builder --mac"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.0",
+    "electron": "^44.7.0",
+    "electron-builder": "^26.15.3",
+    "electron-vite": "^5.0.0",
+    "typescript": "^5.9.0",
+    "vite": "^7.3.7",
+    "vitest": "^4.1.11"
+  },
+  "build": {
+    "appId": "dev.local.zxspectrum",
+    "productName": "ZX Spectrum",
+    "files": ["out/**/*"],
+    "extraResources": [{ "from": "resources/roms", "to": "roms" }],
+    "mac": { "target": "dmg", "category": "public.app-category.games" }
+  }
+}
